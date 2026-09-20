@@ -1,0 +1,74 @@
+{
+  "name": "typesafe-pi",
+  "version": "0.1.0",
+  "description": "TypeSafe System One for Pi: a consent-gated judgment tool plus a workflow design skill.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Geet Khosla",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvkhosla/typesafe-pi.git"
+  },
+  "homepage": "https://github.com/gvkhosla/typesafe-pi#readme",
+  "bugs": {
+    "url": "https://github.com/gvkhosla/typesafe-pi/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi-skill",
+    "typesafe",
+    "jev",
+    "structured-decisions"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "src",
+    "skills",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./src/extension.ts"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": ">=0.85.0 <1",
+    "@earendil-works/pi-tui": ">=0.85.0 <1",
+    "typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "@earendil-works/pi-tui": {
+      "optional": true
+    },
+    "typebox": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.86.0",
+    "@earendil-works/pi-tui": "^0.86.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typebox": "^1.0.0",
+    "typescript": "^6.0.0"
+  }
+}
