@@ -1,6 +1,6 @@
 {
   "name": "typesafe-pi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeSafe System One for Pi: a consent-gated judgment tool plus a workflow design skill.",
   "type": "module",
   "license": "MIT",

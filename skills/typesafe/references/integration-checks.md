@@ -13,6 +13,8 @@ Use this reference while implementing, debugging, or migrating a TypeSafe integr
 
 Construct named questions, call System One once for shared state, and consume each typed answer explicitly. Keep answer-to-action policy in ordinary code. Preserve distributions when later tuning, review, or observability may need them.
 
+Make the human review surface obvious: co-locate question definitions, thresholds, weights, and escalation constants in one focused module when the existing architecture permits it. Name constants by consequence rather than generic confidence. Keep execution elsewhere so reviewing policy does not require spelunking through side effects.
+
 Credentials belong in server-side environment or secret storage. Never embed a key in browser code, a repository, fixtures, logs, or error text.
 
 ## Test matrix
@@ -37,7 +39,7 @@ For a bad outcome, classify the failure before changing prompts:
 6. application action error;
 7. service or transport failure.
 
-Change the layer that failed, then replay the same labeled cases. Typed output guarantees shape, not truth.
+Change the layer that failed, then replay the same labeled cases. Record the exact questions, model alias or version, raw answers, and resulting application decisions so prompt or threshold changes can be compared rather than guessed. Typed output guarantees shape, not truth.
 
 ## Current documentation entry points
 
